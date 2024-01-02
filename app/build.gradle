@@ -19,12 +19,13 @@ android {
         targetSdkVersion 32
         versionCode 14
         versionName "1.0.0"
+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
     }
 
     compileOptions {
         coreLibraryDesugaringEnabled true
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_16
+        targetCompatibility = JavaVersion.VERSION_16
     }
     kotlinOptions {
         jvmTarget = '1.8'
@@ -47,6 +48,11 @@ android {
 }
 
 dependencies {
+    implementation 'androidx.test.espresso:espresso-contrib:3.5.1'
+    androidTestImplementation "joda-time:joda-time:2.12.1"
+    implementation 'com.google.firebase:protolite-well-known-types:18.0.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.6.0-alpha01'
+    androidTestImplementation 'androidx.test.ext:junit:1.2.0-alpha01'
     def retrofit_version = "2.9.0"
     def retrofit_gson_version = "2.9.0"
     def okhttp_logging_version = "4.9.2"
@@ -61,6 +67,7 @@ dependencies {
     def hilt_version = '2.41'
     def gson_version = '2.9.0'
     def swipe_refresh_version = '1.1.0'
+    androidTestImplementation 'io.qameta.allure:allure-kotlin-android:2.0.0'
 
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.4.1'
